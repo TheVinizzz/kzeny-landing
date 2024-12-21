@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Home() {
   useEffect(() => {
@@ -59,48 +60,15 @@ export default function Home() {
             <div className="relative w-full">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-primary-dark/20 blur-3xl rounded-full transform -translate-y-1/2"></div>
               <div className="relative animate-float">
-                {/* Phone Frame SVG */}
-                <div className="relative w-full aspect-[1/2] max-w-sm mx-auto">
-                  <svg className="w-full h-full" viewBox="0 0 320 640" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    {/* Phone Frame */}
-                    <rect x="0" y="0" width="320" height="640" rx="40" fill="#1E293B" />
-                    <rect x="8" y="8" width="304" height="624" rx="32" fill="#0F172A" />
-                    
-                    {/* Status Bar */}
-                    <rect x="16" y="16" width="288" height="32" rx="16" fill="#1E293B" />
-                    
-                    {/* App Content */}
-                    <g transform="translate(24, 64)">
-                      {/* Header */}
-                      <text x="0" y="24" fill="#F8FAFC" fontSize="24" fontWeight="bold">Bem-vindo de volta</text>
-                      <text x="0" y="48" fill="#94A3B8" fontSize="16">sábado</text>
-                      
-                      {/* Balance Card */}
-                      <rect x="0" y="72" width="272" height="160" rx="24" fill="rgba(30, 41, 59, 0.5)" />
-                      <text x="24" y="108" fill="#94A3B8" fontSize="14">Saldo Total • dezembro</text>
-                      <text x="24" y="144" fill="#7C3AED" fontSize="32" fontWeight="bold">R$ 97,22</text>
-                      <rect x="24" y="168" width="224" height="40" rx="12" fill="#7C3AED" />
-                      <text x="136" y="192" fill="white" fontSize="14" textAnchor="middle">Nova Transação</text>
-                      
-                      {/* Financial Summary */}
-                      <text x="0" y="272" fill="#7C3AED" fontSize="20" fontWeight="bold">Ciclos Financeiros</text>
-                      <text x="0" y="296" fill="#94A3B8" fontSize="16">Histórico mensal</text>
-                      
-                      {/* Summary Card */}
-                      <rect x="0" y="320" width="272" height="160" rx="24" fill="rgba(30, 41, 59, 0.5)" />
-                      <text x="24" y="356" fill="#F8FAFC" fontSize="16">dezembro de 2024</text>
-                      <text x="24" y="392" fill="#94A3B8" fontSize="14">Entradas</text>
-                      <text x="200" y="392" fill="#10B981" fontSize="14" textAnchor="end">+ R$ 1.222,22</text>
-                      <text x="24" y="428" fill="#94A3B8" fontSize="14">Saídas</text>
-                      <text x="200" y="428" fill="#EF4444" fontSize="14" textAnchor="end">- R$ 1.125,00</text>
-                      <line x1="24" y1="448" x2="248" y2="448" stroke="#1E293B" strokeWidth="1" />
-                      <text x="24" y="464" fill="#94A3B8" fontSize="14">Saldo</text>
-                      <text x="200" y="464" fill="#10B981" fontSize="14" textAnchor="end">+ R$ 97,22</text>
-                    </g>
-                    
-                    {/* Navigation Bar */}
-                    <rect x="16" y="592" width="288" height="32" rx="16" fill="#1E293B" />
-                  </svg>
+                <div className="relative w-full max-w-sm mx-auto">
+                  <Image
+                    src="/images/phone.png"
+                    alt="KZeny App Preview"
+                    width={320}
+                    height={640}
+                    className="w-full h-auto"
+                    priority
+                  />
                 </div>
               </div>
             </div>

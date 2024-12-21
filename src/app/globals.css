@@ -4,22 +4,23 @@
 
 :root {
   /* Primary Colors */
-  --primary: #7C3AED;
-  --primary-light: rgba(124, 58, 237, 0.1);
-  --primary-lighter: rgba(124, 58, 237, 0.05);
-  --primary-dark: #6D28D9;
+  --primary: #d945ed;
+  --primary-light: #18121b;
+  --primary-lighter: rgba(24,18,27,0.05);
+  --primary-dark: #b337c3;
+  --primary-border: #18121b;
   
   /* Secondary Colors */
   --secondary: #94A3B8;
   --secondary-light: rgba(148, 163, 184, 0.1);
   
   /* Background Colors */
-  --background: #0F172A;
-  --background-light: #1E293B;
-  --card-background: rgba(30, 41, 59, 0.5);
+  --background: #0A0A0F;
+  --background-light: #1A1A24;
+  --card-background: rgba(26, 26, 36, 0.5);
   
   /* Status Colors */
-  --success: #10B981;
+  --success: #22C55E;
   --error: #EF4444;
   
   /* Text Colors */
@@ -36,8 +37,9 @@
 
 @layer components {
   .gradient-card {
-    @apply rounded-3xl backdrop-blur-xl border border-white/10 shadow-xl transition-all duration-300 hover:scale-[0.98];
-    background-color: rgba(30, 41, 59, 0.5);
+    @apply rounded-3xl backdrop-blur-xl shadow-xl transition-all duration-300 hover:scale-[0.98];
+    background-color: rgba(26, 26, 36, 0.5);
+    border: 1px solid var(--primary-border);
   }
   
   .gradient-button {
