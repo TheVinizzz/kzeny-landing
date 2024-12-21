@@ -3,19 +3,101 @@
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary Colors */
+  --primary: #7C3AED;
+  --primary-light: rgba(124, 58, 237, 0.1);
+  --primary-lighter: rgba(124, 58, 237, 0.05);
+  --primary-dark: #6D28D9;
+  
+  /* Secondary Colors */
+  --secondary: #94A3B8;
+  --secondary-light: rgba(148, 163, 184, 0.1);
+  
+  /* Background Colors */
+  --background: #0F172A;
+  --background-light: #1E293B;
+  --card-background: rgba(30, 41, 59, 0.5);
+  
+  /* Status Colors */
+  --success: #10B981;
+  --error: #EF4444;
+  
+  /* Text Colors */
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  body {
+    @apply bg-gradient-to-br from-background to-background-light text-text-primary min-h-screen;
+    background-color: var(--background);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+@layer components {
+  .gradient-card {
+    @apply rounded-3xl backdrop-blur-xl border border-white/10 shadow-xl transition-all duration-300 hover:scale-[0.98];
+    background-color: rgba(30, 41, 59, 0.5);
+  }
+  
+  .gradient-button {
+    @apply rounded-xl bg-gradient-to-r from-primary to-primary-dark text-white font-medium px-6 py-3 transition-all duration-300 hover:opacity-90 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+  
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-primary-dark;
+  }
+  
+  .section-padding {
+    @apply py-16 px-4 sm:px-6 lg:px-8;
+  }
+  
+  .container-width {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .heading-xl {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight;
+  }
+  
+  .heading-lg {
+    @apply text-3xl sm:text-4xl font-bold;
+  }
+  
+  .heading-md {
+    @apply text-2xl sm:text-3xl font-semibold;
+  }
+  
+  .subtitle {
+    @apply text-lg sm:text-xl text-text-secondary;
+  }
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Scroll Animations */
+.fade-in-up {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in-up.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
